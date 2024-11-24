@@ -15,14 +15,14 @@ const Project = ({ isDarkTheme }) => {
 
   return (
     <div
-      className={`flex justify-center font-serif ${
+      className={`flex justify-center items-center mx-auto font-serif ${
         isDarkTheme
           ? "bg-gray-900 text-emerald-300"
           : "bg-gray-100 text-emerald-600"
       }`}
     >
       <div>
-        <h1 className="text-4xl font-bold mb-10" data-aos="fade-up">
+        <h1 className="text-4xl flex justify-center font-bold mb-10" data-aos="fade-up">
           Projects
         </h1>
         <div
@@ -44,7 +44,7 @@ const Project = ({ isDarkTheme }) => {
           </button>
         </div>
         <div
-          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 mx-auto justify-center items-center gap-8 md:grid-cols-2 lg:grid-cols-3"
           data-aos="fade-up"
         >
           {/* Project Cards */}
@@ -56,7 +56,7 @@ const Project = ({ isDarkTheme }) => {
             { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" }].map((project, index) => (
             <div
               key={index}
-              className="relative hover:scale-105 hover:cursor-pointer shadow-lg shadow-emerald-400 w-[450px] h-[300px] transition-transform duration-300 ease-in-out"
+              className="relative hover:scale-105 flex mx-auto px-4 justify-center items-center hover:cursor-pointer shadow-lg shadow-emerald-400 w-[450px] h-[300px] transition-transform duration-300 ease-in-out"
               data-aos="flip-left"
               data-aos-delay={`${index * 100}`}
             >
