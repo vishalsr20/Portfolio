@@ -7,6 +7,7 @@ import todo from "../assets/Todo.png";
 import clever from "../assets/clevarbook.png";
 import music from "../assets/music.png";
 import health from "../assets/health.png";
+import blog from "../assets/blog.png"
 
 const Project = ({ isDarkTheme }) => {
   useEffect(() => {
@@ -53,7 +54,9 @@ const Project = ({ isDarkTheme }) => {
             { img: todo, desc: "HTML, CSS, JS", link: "https://todo-app-drab-three-27.vercel.app/" },
             { img: clever, desc: "ReactJS", link: "https://creast.vercel.app/" },
             { img: music, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/musicapp" },
-            { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" }].map((project, index) => (
+            { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" },
+          {img:blog , desc:"MERN", link:"https://techthinkersblog.onrender.com/"}
+          ].map((project, index) => (
             <div
               key={index}
               className="relative hover:scale-105 hover:cursor-pointer shadow-lg shadow-emerald-400 w-[450px] h-[300px] transition-transform duration-300 ease-in-out"
