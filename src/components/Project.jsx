@@ -7,7 +7,7 @@ import todo from "../assets/Todo.png";
 import clever from "../assets/clevarbook.png";
 import music from "../assets/music.png";
 import health from "../assets/health.png";
-
+import blog from "../assets/blog.png"
 const Project = ({ isDarkTheme }) => {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
@@ -15,10 +15,10 @@ const Project = ({ isDarkTheme }) => {
 
   return (
     <div
-      className={`flex justify-center items-center mx-auto font-serif ${
+      className={`flex justify-center w-full items-center mx-auto font-serif ${
         isDarkTheme
           ? "bg-gray-900 text-emerald-300"
-          : "bg-gray-100 text-emerald-600"
+          : "bg-gray-100 text-blue-600"
       }`}
     >
       <div>
@@ -26,20 +26,20 @@ const Project = ({ isDarkTheme }) => {
           Projects
         </h1>
         <div
-          className="flex gap-5 mb-10 justify-center"
+           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-5 mb-10 justify-center"
           data-aos="zoom-in"
           data-aos-delay="200"
         >
-          <button className="hover:bg-green-600 rounded-lg px-8 shadow-md text-gray-100 text-xl font-sans shadow-emerald-400">
+          <button className="hover:bg-green-600 rounded-lg px-8 shadow-md text-gray-700 font-semibold text-xl font-sans shadow-emerald-400">
             All
           </button>
-          <button className="hover:bg-green-600 rounded-lg px-8 shadow-md text-gray-100 text-xl font-sans shadow-emerald-400">
+          <button className="hover:bg-green-600 rounded-lg px-8 shadow-md text-gray-700 font-semibold  text-xl font-sans shadow-emerald-400">
             ReactJs
           </button>
-          <button className="hover:bg-green-600 rounded-lg px-8 shadow-md text-gray-100 text-xl font-sans shadow-emerald-400">
+          <button className="hover:bg-green-600 rounded-lg px-8 shadow-md text-gray-700 font-semibold  text-xl font-sans shadow-emerald-400">
             NextJs
           </button>
-          <button className="hover:bg-green-600 px-8 shadow-md text-gray-100 text-xl font-sans shadow-emerald-400 rounded-lg">
+          <button className="hover:bg-green-600 px-8 shadow-md  text-xl font-sans text-gray-700 font-semibold shadow-emerald-400 rounded-lg">
             Mern
           </button>
         </div>
@@ -47,16 +47,18 @@ const Project = ({ isDarkTheme }) => {
           className="grid grid-cols-1 mx-auto justify-center items-center gap-8 md:grid-cols-2 lg:grid-cols-3"
           data-aos="fade-up"
         >
-          {/* Project Cards */}
-          {[{ img: shop, desc: "MERN Stack", link: "https://shop-essential-sxmu.vercel.app/" },
+          
+          {[{ img: shop, desc: "MERN Stack", link: "https://shopessential-fronted.onrender.com/" },
             { img: razorpay, desc: "Tailwind", link: "https://razorpayclone-self.vercel.app/" },
-            { img: todo, desc: "HTML, CSS, JS", link: "https://razorpayclone-self.vercel.app/" },
-            { img: clever, desc: "ReactJS", link: "https://razorpayclone-self.vercel.app/" },
+            { img: todo, desc: "HTML, CSS, JS", link: "https://todo-app-drab-three-27.vercel.app/" },
+            { img: clever, desc: "ReactJS", link: "https://creast.vercel.app/" },
             { img: music, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/musicapp" },
-            { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" }].map((project, index) => (
+            { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" },
+            { img : blog , desc:"MERN", link:"https://techthinkersblog.onrender.com/" }
+          ].map((project, index) => (
             <div
               key={index}
-              className="relative hover:scale-105 flex mx-auto px-4 justify-center items-center hover:cursor-pointer shadow-lg shadow-emerald-400 w-[450px] h-[300px] transition-transform duration-300 ease-in-out"
+              className="relative hover:scale-105 flex mx-auto px-4 justify-center items-center hover:cursor-pointer shadow-lg shadow-emerald-400 w-[350px] md:w-[450px] lg:[450px] h-[300px] transition-transform duration-300 ease-in-out"
               data-aos="flip-left"
               data-aos-delay={`${index * 100}`}
             >
