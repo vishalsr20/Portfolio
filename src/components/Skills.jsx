@@ -5,20 +5,20 @@ import "aos/dist/aos.css";
 const Skills = ({ isDarkTheme }) => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true,     // Run animation only once
+      duration: 1000, 
+      once: true,     
     });
   }, []);
 
   return (
     <div
-      className={`font-serif py-20 px-4 md:px-8 lg:px-10 ${
+      className={`font-serif py-20 px-4 w-full  md:px-8 lg:px-10 ${
         isDarkTheme ? "bg-gray-900 text-emerald-300" : "bg-gray-100 text-emerald-600"
       }`}
     >
         <h1 className="text-4xl font-bold  flex justify-center mb-10">About Me</h1>
       <div className="w-full mx-auto shadow-sm shadow-teal-300 rounded flex flex-col lg:flex-row gap-6 lg:gap-10">
-        {/* Info Section */}
+      
         <div
           className="lg:w-1/2 border border-gray-300 p-6 rounded-lg bg-opacity-25 shadow-lg"
           data-aos="fade-up"
@@ -40,7 +40,7 @@ const Skills = ({ isDarkTheme }) => {
           </p>
         </div>
 
-        {/* Skills Section */}
+       
         <div
           className="lg:w-1/2 border border-gray-300 p-6 rounded-lg bg-opacity-25 shadow-lg"
           data-aos="fade-up"

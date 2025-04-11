@@ -35,31 +35,25 @@ const Home = ({ isDarkTheme }) => {
   return (
     <div
       id="home"
-      className={`font-serif py-20 px-4 sm:px-8 lg:px-16 text-center  ${
+      className={`font-serif w-full flex justify-center items-center mx-auto py-20 px-4 sm:px-8 lg:px-16 text-center ${
         isDarkTheme ? "bg-gray-900 text-emerald-300" : "bg-gray-100 text-emerald-600"
       }`}
-      style={{ overflowX: "hidden" }}
+      style={{overflowX:"hidden"}}
     >
-      <div className="w-[90%] h-full mx-auto flex flex-col items-center space-y-8">
-        {/* Greeting */}
+      <div className="h-full w-full mx-auto flex flex-col items-center space-y-8">
         <p className="text-lg sm:text-xl lg:text-2xl">Welcome to my portfolio!</p>
-
-        {/* Name & Title */}
         <p className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           Hello, I'm <span className="text-teal-500">Vishal Rathod</span>
         </p>
-
-        {/* Dynamic Text */}
         <p className="text-xl sm:text-2xl lg:text-3xl font-semibold mt-6">
           I am a <span className="text-teal-400">{currentText}|</span>
         </p>
-
-        {/* Description */}
         <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto mt-4">
-          Hello! I'm Vishal Rathod, a passionate Software Developer and a dedicated Problem Solver. With a strong foundation in programming and a knack for building innovative solutions, I thrive on challenges that demand creative problem-solving skills. My journey in the world of technology has been fueled by my love for coding and my drive to continuously learn and evolve.
+          Hello! I'm Vishal Rathod, a passionate Software Developer and a dedicated Problem Solver. With a strong
+          foundation in programming and a knack for building innovative solutions, I thrive on challenges that demand
+          creative problem-solving skills. My journey in the world of technology has been fueled by my love for coding
+          and my drive to continuously learn and evolve.
         </p>
-
-        {/* View Project Button */}
         <button className="mt-10 bg-green-500 px-8 py-3 text-white font-semibold rounded-lg hover:bg-green-600 transition-all">
           <Link to="projects" smooth={true} duration={500}>
             View Projects

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter, FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareXTwitter,FaGithub, FaSquareInstagram } from "react-icons/fa6";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import emailjs from "@emailjs/browser";
@@ -13,10 +13,9 @@ const Contact = ({ isDarkTheme }) => {
     message: "",
   });
 
-  const [isSending, setIsSending] = useState(false); // State to handle sending status
-  const [isSent, setIsSent] = useState(false); // State to confirm successful sending
+  const [isSending, setIsSending] = useState(false); 
+  const [isSent, setIsSent] = useState(false); 
 
-  // Initialize AOS
   AOS.init({
     duration: 1000,
     once: true,
@@ -33,18 +32,18 @@ const Contact = ({ isDarkTheme }) => {
     e.preventDefault();
     setIsSending(true);
 
-    // Use EmailJS to send the form data
+   
     emailjs
       .send(
-        import.meta.env.VITE_SERVICE_ID, // Replace with your EmailJS Service ID
-        import.meta.env.VITE_TEMPLATE_ID, // Replace with your EmailJS Template ID
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID, 
         {
-          name: value.name,       // Maps to {{name}}
-          email: value.email,     // Maps to {{email}}
-          contact: value.contact, // Maps to {{contact}}
+          name: value.name,       
+          email: value.email,    
+          contact: value.contact,
           message: value.message,
         },
-        import.meta.env.VITE_PUBLIC_ID, // Replace with your EmailJS Public Key
+        import.meta.env.VITE_PUBLIC_ID,
       )
       .then(
         (response) => {
@@ -61,7 +60,7 @@ const Contact = ({ isDarkTheme }) => {
 
   return (
     <div
-      className={`font-serif min-h-screen flex flex-col items-center justify-center px-4 ${
+      className={`font-serif w-full  min-h-screen flex flex-col items-center justify-center px-4 ${
         isDarkTheme
           ? "bg-gray-900 text-emerald-300"
           : "bg-gray-100 text-emerald-600"
@@ -75,9 +74,9 @@ const Contact = ({ isDarkTheme }) => {
         className="flex flex-col  md:flex-row justify-center items-start md:space-x-10 space-y-8 md:space-y-0"
         data-aos="fade-up"
       >
-        {/* Social Media Section */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center mx-auto ">
-          {/* LinkedIn */}
+       
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center items-center mx-auto ">
+      
           <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
             <FaLinkedin className="mx-auto text-blue-700 text-5xl mb-4" />
             <h3 className="font-bold text-blue-500">LinkedIn</h3>
@@ -92,7 +91,25 @@ const Contact = ({ isDarkTheme }) => {
             </a>
           </div>
 
-          {/* Twitter */}
+
+
+
+
+          <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
+            <FaGithub className="mx-auto text-blue-400 text-5xl mb-4" />
+            <h3 className="font-bold text-blue-400"></h3>Git Hub
+            <p className="text-sm">Vishal Rathod</p>
+            <a
+              href="https://github.com/Rathod-vishal-20"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-700 font-semibold hover:underline"
+            >
+              Let's Connect
+            </a>
+          </div>
+
+
           <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
             <FaSquareXTwitter className="mx-auto text-blue-400 text-5xl mb-4" />
             <h3 className="font-bold text-blue-400">Twitter</h3>
@@ -107,7 +124,7 @@ const Contact = ({ isDarkTheme }) => {
             </a>
           </div>
 
-          {/* Instagram */}
+        
           <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
             <FaSquareInstagram className="mx-auto text-pink-400 text-5xl mb-4" />
             <h3 className="font-bold text-pink-400">Instagram</h3>
@@ -123,7 +140,7 @@ const Contact = ({ isDarkTheme }) => {
           </div>
         </div>
 
-        {/* Form Section */}
+        
         <div
           className="w-full max-w-md shadow-teal-300 mb-20 bg-gray-700 p-6 rounded-lg shadow-lg"
           data-aos="fade-up"
