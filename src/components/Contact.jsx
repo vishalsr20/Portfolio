@@ -92,12 +92,10 @@ const Contact = ({ isDarkTheme }) => {
           </div>
 
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 6b36d154910b953f7b3505d093d52d78eb979771
+
           <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
             <FaGithub className="mx-auto text-blue-400 text-5xl mb-4" />
             <h3 className="font-bold text-blue-400"></h3>Git Hub
