@@ -50,15 +50,18 @@ const Project = ({ isDarkTheme }) => {
         >
           
           {[{ img: shop, desc: "MERN Stack", link: "https://shopessential-fronted.onrender.com/" },
+            { img : blog , desc:"MERN", link:"https://techthinkersblog.onrender.com/" },
+
             { img: razorpay, desc: "Tailwind", link: "https://razorpayclone-self.vercel.app/" },
+               { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" },
             { img: todo, desc: "HTML, CSS, JS", link: "https://todo-app-drab-three-27.vercel.app/" },
             { img: clever, desc: "ReactJS", link: "https://creast.vercel.app/" },
             { img: music, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/musicapp" },
-            { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" },
+         
 
-            { img : blog , desc:"MERN", link:"https://techthinkersblog.onrender.com/" }
 
-          {img:blog , desc:"MERN", link:"https://techthinkersblog.onrender.com/"}
+
+
 
           ].map((project, index) => (
             <div
