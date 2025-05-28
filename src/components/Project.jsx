@@ -8,10 +8,7 @@ import clever from "../assets/clevarbook.png";
 import music from "../assets/music.png";
 import health from "../assets/health.png";
 import blog from "../assets/blog.png"
-<<<<<<< HEAD
-=======
 
->>>>>>> 6b36d154910b953f7b3505d093d52d78eb979771
 const Project = ({ isDarkTheme }) => {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
@@ -58,11 +55,11 @@ const Project = ({ isDarkTheme }) => {
             { img: clever, desc: "ReactJS", link: "https://creast.vercel.app/" },
             { img: music, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/musicapp" },
             { img: health, desc: "NextJS", link: "https://github.com/Rathod-vishal-20/HealthCare-App" },
-<<<<<<< HEAD
+
             { img : blog , desc:"MERN", link:"https://techthinkersblog.onrender.com/" }
-=======
+
           {img:blog , desc:"MERN", link:"https://techthinkersblog.onrender.com/"}
->>>>>>> 6b36d154910b953f7b3505d093d52d78eb979771
+
           ].map((project, index) => (
             <div
               key={index}
