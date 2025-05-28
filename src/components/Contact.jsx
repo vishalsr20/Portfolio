@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter,FaGithub, FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareXTwitter, FaGithub, FaSquareInstagram } from "react-icons/fa6";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import emailjs from "@emailjs/browser";
@@ -32,7 +32,6 @@ const Contact = ({ isDarkTheme }) => {
     e.preventDefault();
     setIsSending(true);
 
-   
     emailjs
       .send(
         import.meta.env.VITE_SERVICE_ID,
@@ -91,11 +90,6 @@ const Contact = ({ isDarkTheme }) => {
             </a>
           </div>
 
-
-
-
-
-
           <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
             <FaGithub className="mx-auto text-blue-400 text-5xl mb-4" />
             <h3 className="font-bold text-blue-400"></h3>Git Hub
@@ -109,7 +103,6 @@ const Contact = ({ isDarkTheme }) => {
               Let's Connect
             </a>
           </div>
-
 
           <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
             <FaSquareXTwitter className="mx-auto text-blue-400 text-5xl mb-4" />
@@ -125,7 +118,6 @@ const Contact = ({ isDarkTheme }) => {
             </a>
           </div>
 
-        
           <div className="shadow-lg shadow-teal-300 rounded-lg p-6 text-center border border-teal-300">
             <FaSquareInstagram className="mx-auto text-pink-400 text-5xl mb-4" />
             <h3 className="font-bold text-pink-400">Instagram</h3>
@@ -141,7 +133,6 @@ const Contact = ({ isDarkTheme }) => {
           </div>
         </div>
 
-        
         <div
           className="w-full max-w-md shadow-teal-300 mb-20 bg-gray-700 p-6 rounded-lg shadow-lg"
           data-aos="fade-up"
