@@ -6,21 +6,26 @@ import clever from "../assets/clevarbook.png";
 import music from "../assets/music.png";
 import health from "../assets/health.png";
 import blog from "../assets/blog.png"
+import micro from "../assets/microservices.jpg"
 const Project = ({ isDarkTheme }) => {
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);
 
   // Sample project data (you'll replace with your actual imports)
-  const projects = [
-    { id: 1, title: "ShopEssential", tech: "MERN Stack", category: "Mern", link: "https://shopessential-fronted.onrender.com/", img: shop },
-    { id: 2, title: "Tech Blog", tech: "MERN", category: "Mern", link: "https://techthinkersblog.onrender.com/", img: blog },
-    { id: 3, title: "Razorpay Clone", tech: "Tailwind CSS", category: "ReactJs", link: "https://razorpayclone-self.vercel.app/", img:razorpay },
-    { id: 4, title: "Healthcare App", tech: "NextJS", category: "NextJs", link: "https://github.com/Rathod-vishal-20/HealthCare-App", img: health },
-    { id: 5, title: "Todo App", tech: "Vanilla JS", category: "ReactJs", link: "https://todo-app-drab-three-27.vercel.app/", img: todo },
-    { id: 6, title: "Clevarbook", tech: "ReactJS", category: "ReactJs", link: "https://creast.vercel.app/", img: clever },
-    { id: 7, title: "Music App", tech: "NextJS", category: "NextJs", link: "https://github.com/Rathod-vishal-20/musicapp", img: music },
-  ];
+const projects = [
+  { id: 1, title: "ShopEssential", tech: "MERN Stack", category: "Mern", link: "https://shopessential-fronted.onrender.com/", img: shop },
+  { id: 2, title: "Tech Blog", tech: "MERN", category: "Mern", link: "https://techthinkersblog.onrender.com/", img: blog },
+  { id: 3, title: "Razorpay Clone", tech: "Tailwind CSS", category: "ReactJs", link: "https://razorpayclone-self.vercel.app/", img:razorpay },
+  { id: 4, title: "RideEasy – Microservices System", tech: "Node.js, RabbitMQ, Microservices", category: "Backend", link: "https://github.com/vishalsr20/MicroServices", img: micro },
+  { id: 5, title: "Healthcare App", tech: "NextJS", category: "NextJs", link: "https://github.com/Rathod-vishal-20/HealthCare-App", img: health },
+  { id: 6, title: "Todo App", tech: "Vanilla JS", category: "ReactJs", link: "https://todo-app-drab-three-27.vercel.app/", img: todo },
+  { id: 7, title: "Clevarbook", tech: "ReactJS", category: "ReactJs", link: "https://creast.vercel.app/", img: clever },
+  { id: 8, title: "Music App", tech: "NextJS", category: "NextJs", link: "https://github.com/Rathod-vishal-20/musicapp", img: music },
+
+  
+];
+
 
   const filters = ["All", "ReactJs", "NextJs", "Mern"];
 
