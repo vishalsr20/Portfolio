@@ -6,6 +6,7 @@ import Project from "./Project";
 import Contact from "./Contact";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import { FiDownload, FiEye, FiX, FiFileText, FiUser, FiBriefcase, FiAward, FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+import  GitOverview  from "./GitOverview";
 
 const Header = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -160,6 +161,9 @@ const Header = () => {
       <div className="relative">
         <div id="home">
           <Home isDarkTheme={isDarkTheme} />
+        </div>
+        <div>
+          <GitOverview/>
         </div>
         <div id="skills">
           <Skills isDarkTheme={isDarkTheme} />
