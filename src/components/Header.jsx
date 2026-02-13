@@ -12,7 +12,7 @@ const Header = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [showResume, setShowResume] = useState(false);
+ 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,7 +91,12 @@ const Header = () => {
             <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
               {/* Resume Button - Hidden on small screens, shown on medium+ */}
               <button
-                onClick={() => setShowResume(true)}
+                onClick={() => (  
+                  window.open(
+                    "https://drive.google.com/file/d/1c0LOJJbTaoJnl_iTYW8SFaxLrprTSny1/view",
+                    "_blank"
+                  )
+                )}
                 className={`hidden md:inline-flex items-center space-x-2 px-3 lg:px-4 py-2 lg:py-2.5 rounded-full font-medium text-sm lg:text-base transition-all duration-300 ${
                   isDarkTheme
                     ? 'bg-purple-600/80 text-white hover:bg-purple-500 shadow-lg shadow-purple-500/25'
@@ -139,7 +144,7 @@ const Header = () => {
                   isDarkTheme={isDarkTheme}
                   activeSection={activeSection}
                   setActiveSection={setActiveSection}
-                  setShowResume={setShowResume}
+                  
                 />
               </div>
             </div>
@@ -147,12 +152,7 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Resume Modal */}
-      <ResumeModal 
-        isOpen={showResume} 
-        onClose={() => setShowResume(false)} 
-        isDarkTheme={isDarkTheme} 
-      />
+
 
       {/* Spacer for fixed header */}
       <div className="h-16 sm:h-20" />
@@ -180,7 +180,7 @@ const Header = () => {
 };
 
 // Mobile Menu Component with improved responsive design
-const MobileMenu = ({ navItems, isDarkTheme, activeSection, setActiveSection, setShowResume }) => {
+const MobileMenu = ({ navItems, isDarkTheme, activeSection, setActiveSection }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -246,10 +246,12 @@ const MobileMenu = ({ navItems, isDarkTheme, activeSection, setActiveSection, se
             {/* Mobile action buttons */}
             <div className="mb-6 space-y-3">
               <button
-                onClick={() => {
-                  setShowResume(true);
-                  setIsOpen(false);
-                }}
+                onClick={() => (
+                  window.open(
+                    "https://drive.google.com/file/d/1c0LOJJbTaoJnl_iTYW8SFaxLrprTSny1/view",
+                    "_blank"
+                  )
+                )}
                 className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                   isDarkTheme
                     ? 'bg-purple-600 text-white hover:bg-purple-500'
@@ -307,410 +309,9 @@ const MobileMenu = ({ navItems, isDarkTheme, activeSection, setActiveSection, se
         </div>
       </div>
     </>
-  );
+  ); 
 };
 
-// Resume Modal Component
-const ResumeModal = ({ isOpen, onClose, isDarkTheme }) => {
-  if (!isOpen) return null;
 
-  // Actual resume data from Vishal S Rathod's PDF
-  const resumeData = {
-    personalInfo: {
-      name: "Vishal S Rathod",
-      title: "Full Stack Developer",
-      email: "vishalrathod191918@gmail.com",
-      phone: "+91 9867486139",
-      location: "Mumbai, Maharashtra",
-      summary: "To Achieve a responsible position and personal goals by exploring myself more efficiently in an industry with full determination and expanding my knowledge by working hard and learning new technologies."
-    },
-    experience: [
-      {
-        title: "Full Stack Developer",
-        company: "Veloitsolution",
-        duration: "Apr 2025 – Jun 2025",
-        location: "Mumbai, India",
-        description: "Developed and maintained a full-stack travel booking website, responsible for both client-side and server-side development. Key responsibilities included end-to-end web application development."
-      }
-    ],
-    education: [
-      {
-        degree: "Computer Engineering",
-        school: "Smt Indira Gandhi College Of Engineering",
-        duration: "10 2022 – 05 2026",
-        location: "Mumbai",
-        grade: "CGPA - 8.45"
-      },
-      {
-        degree: "HSC (Higher Secondary Certificate)",
-        school: "Shiravane Vidyalaya And Jr College",
-        duration: "06 2020 – 06 2022",
-        location: "Mumbai",
-        grade: "Percentage - 77.80%"
-      },
-      {
-        degree: "SSC (Secondary School Certificate)",
-        school: "Shiravane Vidyalaya And Jr College",
-        duration: "06 2018 – 03 2020",
-        location: "Mumbai",
-        grade: "Percentage - 80.80%"
-      }
-    ],
-    projects: [
-      {
-        title: "Shop-Essential (FullStack)",
-        technologies: "NODEJS, MONGODB, EXPRESS.JS, React",
-        description: "Built and deployed an e-commerce web application using the MERN stack (MongoDB, Express, React, Node.js). The platform allows users to browse and purchase products, while administrators can add new products with images, manage inventory, and view orders. Implemented user authentication, product filtering, and cart management, ensuring a smooth and dynamic shopping experience.",
-        link: "Shop Essential"
-      },
-      {
-        title: "AI-Trip Planner",
-        technologies: "NODEJS, Firebase",
-        description: "Designed and built an intelligent trip planning platform using React.js, Firebase, and AI-based logic to provide personalized travel itineraries. The application collected user preferences such as destination, budget, and duration, and dynamically generated optimized plans including places to visit, travel modes, stay options, and cost estimations.",
-        link: "AI-Trip Planner"
-      }
-    ],
-    skills: {
-      languages: ["Java", "Node.js", "MongoDB", "MySQL"],
-      tools: ["VS Code", "Git", "Github", "Vercel", "AWS"],
-      frameworks: ["Express.js", "React", "Next.js"],
-      coursework: ["MERN", "NextJS", "AWS", "Docker", "Data Structures", "DBMS", "OOPS", "Git/Github"]
-    },
-    certifications: [
-      "Full Stack development",
-      "Data Structures and Algorithms Course – (CodeHelp)"
-    ]
-  };
-
-  return (
-    <div className="fixed inset-0 z-[100] overflow-hidden">
-      {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-        onClick={onClose}
-      />
-      
-      {/* Modal */}
-      <div className="relative h-full flex items-center justify-center p-2 sm:p-4">
-        <div className={`w-full max-w-4xl max-h-[95vh] rounded-xl shadow-2xl overflow-hidden ${
-          isDarkTheme ? 'bg-gray-900' : 'bg-white'
-        }`}>
-          {/* Header */}
-          <div className={`flex items-center justify-between p-4 sm:p-6 border-b ${
-            isDarkTheme ? 'border-gray-700' : 'border-gray-200'
-          }`}>
-            <h2 className={`text-xl sm:text-2xl font-bold ${
-              isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-            }`}>
-              Resume
-            </h2>
-            <div className="flex items-center space-x-2 sm:space-x-3">
-              <button
-                onClick={() => window.print()}
-                className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
-                  isDarkTheme
-                    ? 'bg-emerald-600 text-white hover:bg-emerald-500'
-                    : 'bg-emerald-500 text-white hover:bg-emerald-600'
-                }`}
-              >
-                <FiDownload className="text-sm" />
-                <span className="hidden sm:inline">Download</span>
-              </button>
-              <button
-                onClick={onClose}
-                className={`p-2 rounded-lg transition-colors duration-200 ${
-                  isDarkTheme ? 'hover:bg-gray-700 text-gray-400' : 'hover:bg-gray-100 text-gray-600'
-                }`}
-              >
-                <FiX className="text-lg" />
-              </button>
-            </div>
-          </div>
-
-          {/* Resume Content */}
-          <div className="overflow-y-auto max-h-[calc(95vh-80px)] p-4 sm:p-6 lg:p-8">
-            <div className="space-y-6 sm:space-y-8">
-              {/* Personal Info */}
-              <div className="text-center">
-                <h1 className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 ${
-                  isDarkTheme ? 'text-white' : 'text-gray-900'
-                }`}>
-                  {resumeData.personalInfo.name}
-                </h1>
-                <p className={`text-lg sm:text-xl font-medium mb-4 ${
-                  isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                }`}>
-                  {resumeData.personalInfo.title}
-                </p>
-                <div className={`flex flex-wrap justify-center gap-4 text-sm ${
-                  isDarkTheme ? 'text-gray-300' : 'text-gray-600'
-                }`}>
-                  <div className="flex items-center space-x-1">
-                    <FiMail className="text-xs" />
-                    <span>{resumeData.personalInfo.email}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <FiPhone className="text-xs" />
-                    <span>{resumeData.personalInfo.phone}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <FiMapPin className="text-xs" />
-                    <span>{resumeData.personalInfo.location}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Career Objective */}
-              <div>
-                <h2 className={`text-lg sm:text-xl font-bold mb-3 ${
-                  isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                }`}>
-                  Career Objective
-                </h2>
-                <p className={`text-sm sm:text-base leading-relaxed ${
-                  isDarkTheme ? 'text-gray-300' : 'text-gray-700'
-                }`}>
-                  {resumeData.personalInfo.summary}
-                </p>
-              </div>
-
-              {/* Experience */}
-              <div>
-                <h2 className={`text-lg sm:text-xl font-bold mb-4 flex items-center ${
-                  isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                }`}>
-                  <FiBriefcase className="mr-2" />
-                  Experience
-                </h2>
-                <div className="space-y-4">
-                  {resumeData.experience.map((exp, index) => (
-                    <div key={index} className={`p-4 rounded-lg ${
-                      isDarkTheme ? 'bg-gray-800' : 'bg-gray-50'
-                    }`}>
-                      <h3 className={`font-semibold text-sm sm:text-base ${
-                        isDarkTheme ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {exp.title}
-                      </h3>
-                      <p className={`font-medium text-sm ${
-                        isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                      }`}>
-                        {exp.company}
-                      </p>
-                      <p className={`text-xs sm:text-sm mb-2 ${
-                        isDarkTheme ? 'text-gray-400' : 'text-gray-500'
-                      }`}>
-                        {exp.duration} • {exp.location}
-                      </p>
-                      <p className={`text-sm ${
-                        isDarkTheme ? 'text-gray-300' : 'text-gray-700'
-                      }`}>
-                        {exp.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Projects */}
-              <div>
-                <h2 className={`text-lg sm:text-xl font-bold mb-4 ${
-                  isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                }`}>
-                  Projects
-                </h2>
-                <div className="space-y-4">
-                  {resumeData.projects.map((project, index) => (
-                    <div key={index} className={`p-4 rounded-lg ${
-                      isDarkTheme ? 'bg-gray-800' : 'bg-gray-50'
-                    }`}>
-                      <h3 className={`font-semibold text-sm sm:text-base ${
-                        isDarkTheme ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {project.title}
-                      </h3>
-                      <p className={`font-medium text-sm mb-2 ${
-                        isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                      }`}>
-                        {project.technologies}
-                      </p>
-                      <p className={`text-sm ${
-                        isDarkTheme ? 'text-gray-300' : 'text-gray-700'
-                      }`}>
-                        {project.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Education */}
-              <div>
-                <h2 className={`text-lg sm:text-xl font-bold mb-4 flex items-center ${
-                  isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                }`}>
-                  <FiAward className="mr-2" />
-                  Education
-                </h2>
-                <div className="space-y-4">
-                  {resumeData.education.map((edu, index) => (
-                    <div key={index} className={`p-4 rounded-lg ${
-                      isDarkTheme ? 'bg-gray-800' : 'bg-gray-50'
-                    }`}>
-                      <h3 className={`font-semibold text-sm sm:text-base ${
-                        isDarkTheme ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {edu.degree}
-                      </h3>
-                      <p className={`font-medium text-sm ${
-                        isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                      }`}>
-                        {edu.school}
-                      </p>
-                      <p className={`text-xs sm:text-sm mb-2 ${
-                        isDarkTheme ? 'text-gray-400' : 'text-gray-500'
-                      }`}>
-                        {edu.duration} • {edu.location}
-                      </p>
-                      <p className={`text-sm font-medium ${
-                        isDarkTheme ? 'text-gray-300' : 'text-gray-700'
-                      }`}>
-                        {edu.grade}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Technical Skills */}
-              <div>
-                <h2 className={`text-lg sm:text-xl font-bold mb-4 ${
-                  isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                }`}>
-                  Technical Skills
-                </h2>
-                <div className="space-y-4">
-                  {/* Languages */}
-                  <div>
-                    <h3 className={`font-semibold text-sm mb-2 ${
-                      isDarkTheme ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      Languages:
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {resumeData.skills.languages.map((skill, index) => (
-                        <span
-                          key={index}
-                          className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
-                            isDarkTheme
-                              ? 'bg-blue-900/50 text-blue-300 border border-blue-700'
-                              : 'bg-blue-100 text-blue-700 border border-blue-200'
-                          }`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Developer Tools */}
-                  <div>
-                    <h3 className={`font-semibold text-sm mb-2 ${
-                      isDarkTheme ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      Developer Tools:
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {resumeData.skills.tools.map((skill, index) => (
-                        <span
-                          key={index}
-                          className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
-                            isDarkTheme
-                              ? 'bg-purple-900/50 text-purple-300 border border-purple-700'
-                              : 'bg-purple-100 text-purple-700 border border-purple-200'
-                          }`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Frameworks */}
-                  <div>
-                    <h3 className={`font-semibold text-sm mb-2 ${
-                      isDarkTheme ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      Technologies/Frameworks:
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {resumeData.skills.frameworks.map((skill, index) => (
-                        <span
-                          key={index}
-                          className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
-                            isDarkTheme
-                              ? 'bg-emerald-900/50 text-emerald-300 border border-emerald-700'
-                              : 'bg-emerald-100 text-emerald-700 border border-emerald-200'
-                          }`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Coursework */}
-                  <div>
-                    <h3 className={`font-semibold text-sm mb-2 ${
-                      isDarkTheme ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      Coursework:
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {resumeData.skills.coursework.map((skill, index) => (
-                        <span
-                          key={index}
-                          className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
-                            isDarkTheme
-                              ? 'bg-gray-700 text-gray-300 border border-gray-600'
-                              : 'bg-gray-100 text-gray-700 border border-gray-300'
-                          }`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Certifications */}
-              <div>
-                <h2 className={`text-lg sm:text-xl font-bold mb-4 ${
-                  isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'
-                }`}>
-                  Certifications
-                </h2>
-                <div className="space-y-2">
-                  {resumeData.certifications.map((cert, index) => (
-                    <div key={index} className={`p-3 rounded-lg ${
-                      isDarkTheme ? 'bg-gray-800' : 'bg-gray-50'
-                    }`}>
-                      <p className={`text-sm font-medium ${
-                        isDarkTheme ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        • {cert}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export default Header;

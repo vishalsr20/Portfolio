@@ -3,7 +3,14 @@ import { Link } from "react-scroll";
 import { Github, Linkedin, Code2, Trophy, ExternalLink, ChevronDown, Sparkles, Terminal } from "lucide-react";
 
 const Home = ({ isDarkTheme }) => {
-  const phrases = ["Full Stack Developer", "Problem Solver", "Tech Innovator", "Open Source Contributor"];
+  const phrases = [
+  "Agentic AI Enthusiast",
+  "Full Stack Developer",
+  "Problem Solver",
+  "Tech Innovator",
+  "Open Source Contributor"
+  
+];
   const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -137,14 +144,16 @@ const Home = ({ isDarkTheme }) => {
         </div>
 
         {/* Description */}
-        <p className={`text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto mb-10 transition-all duration-700 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-        } ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
-          Crafting elegant digital experiences with modern technologies. 
-          Specializing in <span className={`font-semibold ${isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'}`}>MERN Stack</span>, 
-          <span className={`font-semibold ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}> microservices architecture</span>, and 
-          <span className={`font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}> competitive programming</span>.
-        </p>
+         <p className={`text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto mb-10 transition-all duration-700 delay-400 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          } ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
+            Crafting elegant digital experiences with modern technologies. 
+            Specializing in{" "}
+            <span className={`font-semibold ${isDarkTheme ? 'text-emerald-400' : 'text-emerald-600'}`}>MERN Stack</span>,{" "}
+            <span className={`font-semibold ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>microservices architecture</span>,{" "}
+            <span className={`font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>competitive programming</span>, and{" "}
+            <span className={`font-semibold ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>Agentic AI systems</span>.
+          </p>
 
         {/* Achievement Stats */}
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 transition-all duration-700 delay-500 ${
