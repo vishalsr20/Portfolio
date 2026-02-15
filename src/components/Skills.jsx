@@ -32,6 +32,7 @@ const Skills = ({ isDarkTheme }) => {
     { name: "Docker", category: "devops", level: 72 },
     { name: "GitHub", category: "tools", level: 85 },
     { name: "Aeternity UI", category: "frontend", level: 75 },
+    { name: "AI", category: "fullstack", level: 75 },
   ];
 
   const categories = [
